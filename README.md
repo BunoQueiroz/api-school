@@ -6,3 +6,7 @@
 * Django Rest Framework 3.14.0
 
 # Funcionalidades
+* Disponibiliza os dados de todos os alunos, cursos e matrículas
+* Permite o site admin utilizar todos os modelos (CRUD)
+* Lista todos os alunos de um curso
+* Lista todos os curso em que um aluno está matriculado
