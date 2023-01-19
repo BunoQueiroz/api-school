@@ -1,6 +1,6 @@
 from rest_framework import viewsets, generics
 from school.models import Course, Registration, Studant
-from school.serializers import CourseSerializer, RegistrationSerializer, StudantSerializer, StudantPerCourseSerializers
+from school.serializers import CourseSerializer, RegistrationSerializer, StudantSerializer, StudantPerCourseSerializers, CoursesPerStudantSerializer
 
 class CourseViewSet(viewsets.ModelViewSet):
     """Disponibiliza o CRUD para todos os Cursos"""
@@ -22,3 +22,9 @@ class ListStudantsForCourse(generics.ListAPIView):
     def get_queryset(self):
         return Registration.objects.filter(course_id=self.kwargs['pk'])
     serializer_class = StudantPerCourseSerializers
+
+class ListCoursePerStudant(generics.ListAPIView):
+    """Lista todos os cursos em que um determinado aluno está matriculado"""
+    def get_queryset(self):
+        return Registration.objects.filter(studant_id=self.kwargs['pk'])
+    serializer_class = CoursesPerStudantSerializer
