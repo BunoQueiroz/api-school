@@ -29,7 +29,7 @@ class RegistrationSerializer(serializers.ModelSerializer):
         model = Registration
         fields = ['id', 'studant', 'course', 'initial_date', 'deadline']
 
-class StudantForCourseSerializers(serializers.ModelSerializer):
+class StudantPerCourseSerializers(serializers.ModelSerializer):
     studant = serializers.ReadOnlyField(source='studant.first_name')
     initial_date = serializers.DateField(format='%d-%m-%Y')
     deadline = serializers.DateField(format='%d-%m-%Y')
