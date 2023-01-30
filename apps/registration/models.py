@@ -1,5 +1,6 @@
 from django.db import models
-from school.models import Studant, Course
+from course.models import Course
+from studant.models import Studant
 
 class Registration(models.Model):
     studant = models.ForeignKey(Studant, on_delete=models.CASCADE, blank=False)

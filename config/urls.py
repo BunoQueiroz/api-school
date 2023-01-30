@@ -1,7 +1,9 @@
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
-from school.views import CourseViewSet, StudantViewSet, RegistrationViewSet, ListStudantsForCourse, ListCoursePerStudant
+from studant.views import StudantViewSet, ListStudantsForCourse
+from course.views import CourseViewSet
+from registration.views import ListCoursePerStudant, RegistrationViewSet
 
 router = routers.DefaultRouter()
 router.register('studants', StudantViewSet, 'studants')
